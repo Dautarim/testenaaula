@@ -13,7 +13,22 @@ function peq(evn)
     tempo = setTimeout(filtrado(evn.target.value).then((dado) => 
     {
         let contain = document.querySelector(".container")
-        console.log(contain)
+        
+        contain.innerHTML = ""
+
+        dado.forEach((e) => 
+        {
+            contain.innerHTML += 
+            `
+                <div class="box">
+                    <i class="ph-bold ph-user"></i>
+                    <span>
+                        ${e.name}
+                    </span>
+                </div>
+            `
+            
+        });
     }),1000)
     
 }
